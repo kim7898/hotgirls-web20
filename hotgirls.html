@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+<link rel="stylesheet"  href="./css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+         <div class="container">
+
+        <div class="topnav ">
+
+            <div class="search-container ">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="enter your search ... " name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+            <a class="navbar-brand " href="#">
+
+                <img  src="data:image/png;base64,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">
+                HOTGIRLS
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12">
+        <form class="form-inline">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                                               <span class="input-group-text" id="basic-addon1"><i class="fas fa-camera-retro"></i></span>
+
+                  </div>
+                  <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"> <i class="fas fa-bars"></i></span>
+
+                      </div>
+                     
+                  <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                </div>
+              </form></div>
+            </div>
+        </div>
+             </nav>
+            
+    <!-- content -->  
+<div style="background-color:rgb(215, 230, 241)">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                        <div class="carousel-item active">
+ <div class="container" >
+     
+         <br>
+         <br>
+                <div class="row">
+                                        <br>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                                            <div>
+                                                          <img id="image"  class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg" 
+                                                          height="400">
+                                                        <div class="container">  <button type="button" id="click"  class="btn btn-primary"  data-toggle="modal" data-target="#myModal">
+                          <i  style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+
+                                                              </button>
+                                                              <div class="modal" id="myModal">
+                                                                    <div class="modal-dialog">
+                                                                      <div class="modal-content">
+                                                                      
+                                                                        <!-- Modal Header -->
+                                                                        <!-- <div class="modal-header">
+                                                                          <h4 class="modal-title">Modal Heading</h4>
+                                                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                        </div>
+                                                                         -->
+                                                                        <!-- Modal body -->
+                                                                        <div class="modal-body">
+                                                                                <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-9-683x1024.jpg" 
+                                                                                >
+                                                                                <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                                              <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                                              <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                                              <span ><i id="view"class="fas fa-clock"></i></span>
+                                                                            
+                                                                            <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                                                bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                                                        </div>
+                                                                        
+                                                                        <!-- Modal footer -->
+                                                                        <div class="modal-footer">
+                                                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                        
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  
+                                                                </div>
+                                                        
+                                                          <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                          <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                          <span ><i id="view"class="fas fa-clock"></i></span>
+                                                            </div>
+                                                           
+                                                                    <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                                            bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                                            
+  
+                                               
+                                             </div>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                        
+                                                            <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-4-710x1024.jpg">
+                                                            <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                          <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                          <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                          <span ><i id="view"class="fas fa-clock"></i></span>
+                                                            <div class="desc"> Sau những thay đổi liên tục từ nhiều chủ sở hữu trước đó, 
+                                                            hiện trạng công trình giờ đây trở nên không tương thích với lối sống cũng như yêu cầu của vị gia chủ hiện tại</div>
+                                            </div>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                                    
+                                                            <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-9-683x1024.jpg" 
+                                                            >
+                                                            <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                          <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                          <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                          <span ><i id="view"class="fas fa-clock"></i></span>
+                                                        
+                                                        <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                            bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-3 ">
+                                        
+                                                                <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg" >
+                                                                <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                                <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                                <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                                <span ><i id="view"class="fas fa-clock"></i></span>
+                                                            <div class="desc">Cùng với giải pháp trang trí trực tiếp lên phần thô hiện trạng cùng một không gian mở thoáng đãng, 
+                                                                căn hộ như một cách để truyền tải ý nghĩa về những chi tiết hiện đại được kết nối trực tiếp với quá khứ.</div>
+                                            </div>
+                </div>
+                    <div class="row">
+                            <br>
+                                            
+                                                <div class=" col-sm-6 col-lg-3 ">
+                                                        
+                                                        <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg"   >
+                                                        <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                        <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                        <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                        <span ><i id="view"class="fas fa-clock"></i></span>
+                                                        <div class="desc">Căn hộ ERTLER là một dự án cải tạo công trình thuộc khối chung cư 
+                                                            cũ từ những năm 1900 thuộc trung tâm thành phố lịch sử Oradea do KTS Mende Valer thực hiện</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3  ">
+                                                        
+                                                            <img id="image" class="img-responsive"src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-4-710x1024.jpg"   >
+                                                            <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                            <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                            <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                            <span ><i id="view"class="fas fa-clock"></i></span>
+                                                        <div class="desc"> Sau những thay đổi liên tục từ nhiều chủ sở hữu trước đó, 
+                                                            hiện trạng công trình giờ đây trở nên không tương thích với lối sống cũng như yêu cầu của vị gia chủ hiện tại</div>
+                                                        </div>
+                                                        <div class=" col-sm-6 col-lg-3  ">
+                                                                <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                                <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                                <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                                <span ><i id="view"class="fas fa-clock"></i></span>
+                                                                <img id="image"class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-9-683x1024.jpg"  >
+                                                            
+                                                            <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                                bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-lg-3 ">
+                                                        
+                                                                    <img id="image" class="img-responsive"src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg"   >
+                                                                    <i id="click" style="font-size:24px" class="fas fa-expand-arrows-alt"></i>
+                                                                    <span id="show" ><i id="date"class="fas fa-eye"></i></span>
+                                                                    <span  ><i id="like"class="fas fa-thumbs-up"></i></span>
+                                                                    <span ><i id="view"class="fas fa-clock"></i></span>
+                                                                <div class="desc">Cùng với giải pháp trang trí trực tiếp lên phần thô hiện trạng cùng một không gian mở thoáng đãng, 
+                                                                    căn hộ như một cách để truyền tải ý nghĩa về những chi tiết hiện đại được kết nối trực tiếp với quá khứ.</div>
+                                                                </div>      
+                    
+                     </div>
+ <!-- row    ///// --> 
+ </div>
+             
+ </div>  
+ <div class="carousel-item">
+        <div class="container" >
+     
+                <br>
+                <div class="row">
+                                        <br>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                     
+                                                          <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg" >
+
+                             <div class="desc">Căn hộ ERTLER là một dự án cải tạo công trình thuộc khối chung cư 
+                                                                cũ từ những năm 1900 thuộc trung tâm thành phố lịch sử Oradea do KTS Mende Valer thực hiện</div>
+                                            </div>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                        
+                                                            <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/Technology-changes-sleep-3.jpg"
+                                                            >
+                                                    
+                                                            <div class="desc"> Sau những thay đổi liên tục từ nhiều chủ sở hữu trước đó, 
+                                                            hiện trạng công trình giờ đây trở nên không tương thích với lối sống cũng như yêu cầu của vị gia chủ hiện tại</div>
+                                            </div>
+                                            <div class=" col-sm-6 col-lg-3  ">
+                                                    
+                                                            <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/Technology-changes-sleep-2.jpg" 
+                                                           >
+                                                        
+                                                        <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                            bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-3 ">
+                                        
+                                                                <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/Technology-changes-sleep-4.jpg" alt="Cinque Terre"  >
+                                                            
+                                                            <div class="desc">Cùng với giải pháp trang trí trực tiếp lên phần thô hiện trạng cùng một không gian mở thoáng đãng, 
+                                                                căn hộ như một cách để truyền tải ý nghĩa về những chi tiết hiện đại được kết nối trực tiếp với quá khứ.</div>
+                                            </div>
+                </div>
+                    <div class="row">
+                            <br>
+                                            
+                                                <div class=" col-sm-6 col-lg-3 ">
+                                                        
+                                                        <img id="image" class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg"  >
+                                                        
+                                                        <div class="desc">Căn hộ ERTLER là một dự án cải tạo công trình thuộc khối chung cư 
+                                                            cũ từ những năm 1900 thuộc trung tâm thành phố lịch sử Oradea do KTS Mende Valer thực hiện</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-lg-3  ">
+                                                        
+                                                            <img id="image" class="img-responsive"src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-4-710x1024.jpg"  >
+                                                        
+                                                        <div class="desc"> Sau những thay đổi liên tục từ nhiều chủ sở hữu trước đó, 
+                                                            hiện trạng công trình giờ đây trở nên không tương thích với lối sống cũng như yêu cầu của vị gia chủ hiện tại</div>
+                                                        </div>
+                                                        <div class=" col-sm-6 col-lg-3  ">
+                                                        
+                                                                <img id="image"class="img-responsive" src="https://www.elledecoration.vn/wp-content/uploads/2019/03/Van-Staeyens-Antwerp-townhouse-9-683x1024.jpg"  >
+                                                            
+                                                            <div class="desc">Sau khi loại bỏ phần vừa trát phủ bên ngoài hiện trạng, 
+                                                                bề mặt bê tông của trần nhà được giữ lại và bố trí trực tiếp các hệ thống chiếu sáng</div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-lg-3 ">
+                                                        
+                                                                    <img id="image" class="img-responsive"src="https://www.elledecoration.vn/wp-content/uploads/2019/02/ERTLER-Apartment-16.jpg"  >
+                                                                
+                                                                <div class="desc">Cùng với giải pháp trang trí trực tiếp lên phần thô hiện trạng cùng một không gian mở thoáng đãng, 
+                                                                    căn hộ như một cách để truyền tải ý nghĩa về những chi tiết hiện đại được kết nối trực tiếp với quá khứ.</div>
+                                                                </div>      
+                    
+                     </div>
+        <!-- row    ///// --> 
+        </div>
+        <br>
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators"  data-slide="prev">
+   
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+  
+    </a>
+  </div>
+      </div>
+
+        
+</div>
+</div>
+     <script>
+         $("#image").on(click , ()=>{  
+            document.getElementById("show").style.opacity= "100%";
+           
+  
+
+         
+
+         })
+      
+     </script>
+</body>
+</html>

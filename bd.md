@@ -1,0 +1,21 @@
+-images:
+    -links:
+    -views: 
+    -post-date :
+    -like:
+    -description:
+    -title:
+    -author
+-coments:
+    -imageId
+    -time
+    -userId
+    -content
+-users:
+    -name 
+    -dob
+    -password
+    -location
+    -gender
+    -account
+    -
